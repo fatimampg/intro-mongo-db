@@ -1,6 +1,7 @@
-const User = require('../user')
+import User from '../user.js';
 
 describe('User model', () => {
+
   test('first name must be required', async () => {
     expect.assertions(1)
 
@@ -21,6 +22,7 @@ describe('User model', () => {
         firstName: 'Williams',
         email: 'sasha@gmail.com'
       })
+      console.log("user added")
     } catch (e) {
       expect(e).toBeTruthy()
     }    
@@ -42,19 +44,21 @@ describe('User model', () => {
     expect.assertions(1)
 
     try {
-      await User.init() // wait for index to build
-      await User.create([
+      await User.createIndexes();
+      await User.create(
         {
           lastName: 'Williams',
           firstName: 'Sasha',
           email: 'email@gmail.com'
-        },
+        })
+      console.log("1st user created")
+      await User.create(
         {
           lastName: 'Haas',
           firstName: 'Mel',
           email: 'email@gmail.com'
-        }
-      ])
+        })
+        console.log("attempt to create 2nd user with same email")
     } catch (e) {
       expect(e).toBeTruthy()
     }    
@@ -76,7 +80,7 @@ describe('User model', () => {
       firstName: 'Tilly',
       lastName: 'Mills',
       email: 'tg@gmail.com',
-      birthDate: now, // they were born today 😎
+      birthDate: now, 
       address: {
         street: 'Heming way',
         houseNumber: 1234,

@@ -1,5 +1,5 @@
-const User = require('../user')
-const crud = require('../crud')
+import User from '../user.js';
+import crud from '../crud.js';
 
 describe('User crud', () => {
   describe('getUserById', () => {
