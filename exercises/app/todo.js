@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose';
 
 const todoSchema = new mongoose.Schema({
   message: {
@@ -14,5 +14,4 @@ const todoSchema = new mongoose.Schema({
   dueOn: Date
 }, {timestamps: true})
 
-
-module.exports = mongoose.model('todo', todoSchema)
+export default mongoose.model('todo', todoSchema);
