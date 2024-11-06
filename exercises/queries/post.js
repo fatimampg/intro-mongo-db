@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose';
 
 const postSchema = new mongoose.Schema({
   title: {
@@ -20,6 +20,6 @@ const postSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   }
-}, {timestamps: true})
+}, { timestamps: true })
 
-module.exports = mongoose.model('post', postSchema)
+export default mongoose.model('post', postSchema);

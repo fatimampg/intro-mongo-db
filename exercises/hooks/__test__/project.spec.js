@@ -1,5 +1,5 @@
-const Project = require('../project')
-const mongoose = require('mongoose')
+import mongoose from 'mongoose';
+import Project from '../project.js';
 
 describe('Project model', () => {
   test('project names are unique per org', async () => {

@@ -1,4 +1,4 @@
-const Post = require('./post')
+import Post from './post.js'
 
 const postByTitle = (title) => {
 
@@ -24,7 +24,9 @@ const addSimilarPosts = (postId, similarPosts) => {
   
 }
 
-module.exports = {
+
+export default 
+{
   postByTitle,
   postsForAuthor,
   fullPostById,

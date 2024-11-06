@@ -1,5 +1,6 @@
-const mongoose = require('mongoose')
-const Project = require('./project')
+import mongoose from 'mongoose';
+import Project from './project.js';
+
 const cdnUrl = 'https://cdn.adminapp.com'
 
 const orgSchema = new mongoose.Schema({
@@ -23,4 +24,4 @@ const orgSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('org', orgSchema)
+export default mongoose.model('org', orgSchema);

@@ -1,6 +1,6 @@
-const Project = require('../project')
-const Org = require('../org')
-const mongoose = require('mongoose')
+import Project from '../project.js';
+import Org from '../org.js';
+import mongoose from 'mongoose';
 
 describe('Org model', () => {
   test('removes projects when org is remove', async () => {
